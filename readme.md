@@ -1,1 +1,8 @@
-[![Discord Presence](https://lanyard.cnrad.dev/api/627956888541331525?showDisplayName=true)](https://discord.com/users/627956888541331525)
+<iframe
+    title="Discord user embed"
+    width="340"
+    height="192"
+    frameborder="0"
+    sandbox="allow-scripts"
+    src="https://widgets.vendicated.dev/user?id=627956888541331525&theme=dark&banner=true&full-banner=true&rounded-corners=true&discord-icon=true&badges=true&guess-nitro=true&"
+></iframe>
