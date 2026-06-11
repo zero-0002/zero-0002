@@ -5,11 +5,19 @@
 <br clear="both">
 
 <div align="center">
+  <img src="https://skillicons.dev/icons?i=angular" height="60" alt="angular logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=next" height="60" alt="next logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=ai" height="60" alt="ai logo"  />
+  <img width="12" />
   <img src="https://skillicons.dev/icons?i=flutter" height="60" alt="flutter logo"  />
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=react" height="60" alt="react native logo"  />
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=kotlin" height="60" alt="kotlin logo"  />
+  <img src="https://skillicons.dev/icons?i=python" height="60" alt="python logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=#C" height="60" alt="#C logo"  />
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=swift" height="60" alt="swift logo"  />
   <img width="12" />
@@ -29,20 +37,12 @@
 <div align="center">
 </div>
 
-###
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app?username=RikuSato0&theme=dracula&column=-1&row=1&margin-w=8&margin-h=8&no-bg=false&no-frame=false&order=4" height="150" alt="trophy graph"  />
-</div>
-
-###
-
 <br clear="both">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/RikuSato0/RikuSato0/output/pacman-contribution-graph-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/RikuSato0/RikuSato0/output/pacman-contribution-graph.svg">
-  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/RikuSato0/RikuSato0/output/pacman-contribution-graph.svg">
+  <source media="(prefers-color-scheme: dark)" srcset=".github/workflows/pacman-contribution-graph-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset=".github/workflows/pacman-contribution-graph.svg">
+  <img alt="pacman contribution graph" src=".github/workflows/pacman-contribution-graph.svg">
 </picture>
 
 ###
