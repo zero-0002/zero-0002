@@ -17,10 +17,6 @@
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=python" height="60" alt="python logo"  />
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=#C" height="60" alt="#C logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=swift" height="60" alt="swift logo"  />
-  <img width="12" />
   <img src="https://skillicons.dev/icons?i=firebase" height="60" alt="firebase logo"  />
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=nodejs" height="60" alt="nodejs logo"  />
