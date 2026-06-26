@@ -5,15 +5,7 @@
 <br clear="both">
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=angular" height="60" alt="angular logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=next" height="60" alt="next logo"  />
-  <img width="12" />
   <img src="https://skillicons.dev/icons?i=ai" height="60" alt="ai logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=flutter" height="60" alt="flutter logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=react" height="60" alt="react native logo"  />
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=python" height="60" alt="python logo"  />
   <img width="12" />
@@ -28,8 +20,6 @@
   <img src="https://skillicons.dev/icons?i=azure" height="60" alt="azure logo"  />
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=github" height="60" alt="github logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=firebase" height="60" alt="firebase logo"  />
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=nodejs" height="60" alt="nodejs logo"  />
   <img width="12" />
