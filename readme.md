@@ -1,4 +1,4 @@
-<h1 align="center">AI/MLOps & Full-Stack Engineer</h1>
+<h1 align="center">AI/MLOps Engineer</h1>
 
 ###
 
