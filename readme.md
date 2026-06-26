@@ -1,4 +1,4 @@
-<h1 align="center">Full-Stack Mobile & Web Developer</h1>
+<h1 align="center">AI/MLOps & Full-Stack Engineer</h1>
 
 ###
 
@@ -16,6 +16,18 @@
   <img src="https://skillicons.dev/icons?i=react" height="60" alt="react native logo"  />
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=python" height="60" alt="python logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=pytorch" height="60" alt="pytorch logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=tensorflow" height="60" alt="tensorflow logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=kubernetes" height="60" alt="kubernetes logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=docker" height="60" alt="docker logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=azure" height="60" alt="azure logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=github" height="60" alt="github logo"  />
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=firebase" height="60" alt="firebase logo"  />
   <img width="12" />
