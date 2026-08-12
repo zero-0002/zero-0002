@@ -5,7 +5,10 @@
 <br clear="both">
 
 <div align="center">
-  <img src="./assets/senju-crest-skills.svg" alt="Senju crest shaped with skill icons" width="720" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/senju-crest-skills-dark.svg">
+    <img src="./assets/senju-crest-skills.svg" alt="Senju crest shaped with skill icons" width="720" />
+  </picture>
 </div>
 
 ###
