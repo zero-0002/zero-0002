@@ -6,7 +6,7 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-NEW_SIZE = 68
+NEW_SIZE = 60
 FILES = [
     Path("assets/senju-crest-skills.svg"),
     Path("assets/senju-crest-skills-dark.svg"),
