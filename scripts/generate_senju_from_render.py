@@ -61,7 +61,7 @@ OUT = ROOT / "assets" / "senju-crest-skills.svg"
 CACHE = ROOT / "assets" / ".skillicons-cache"
 UNDERLAY = ROOT / "assets" / "senju-crest-underlay.png"
 
-ICON = 52
+ICON = 68
 PAD = 28
 
 
