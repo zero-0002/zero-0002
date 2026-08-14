@@ -4,7 +4,7 @@ Monitors development velocity and packaging metrics.
 """
 
 import datetime
-from typing import Dict, List, Tuple
+from typing import Any, Dict, List, Tuple
 from dataclasses import dataclass
 
 
@@ -23,18 +23,24 @@ class CommitPaceTracker:
     def __init__(self):
         self.commits: List[CommitMetric] = []
         self.weekly_stats: Dict[int, int] = {}
+        self._by_date: Dict[datetime.date, CommitMetric] = {}
     
     def add_commit(self, date: datetime.date, message: str) -> None:
         """Add a commit entry."""
-        if not self.commits or self.commits[-1].date != date:
-            self.commits.append(CommitMetric(
+        # Look up by date rather than only comparing the last entry, so commits
+        # supplied out of chronological order still collapse into one day.
+        existing = self._by_date.get(date)
+        if existing is None:
+            metric = CommitMetric(
                 date=date,
                 count=1,
                 authors=1,
                 message_length=len(message)
-            ))
+            )
+            self._by_date[date] = metric
+            self.commits.append(metric)
         else:
-            self.commits[-1].count += 1
+            existing.count += 1
     
     def get_weekly_pace(self) -> Dict[str, float]:
         """Calculate weekly commit pace."""
@@ -43,8 +49,11 @@ class CommitPaceTracker:
         
         weekly_commits = {}
         for commit in self.commits:
-            week = commit.date.isocalendar()[1]
-            weekly_commits[f"week_{week}"] = weekly_commits.get(f"week_{week}", 0) + commit.count
+            iso_year, week, _ = commit.date.isocalendar()
+            # Include the ISO year so the same week number in different years
+            # does not collapse into a single bucket.
+            key = f"{iso_year}-W{week:02d}"
+            weekly_commits[key] = weekly_commits.get(key, 0) + commit.count
         
         return weekly_commits
     
@@ -85,18 +94,18 @@ class ReleaseManager:
         if len(self.releases) < 2:
             return 0.0
         
-        first_date = self.releases[0][1]
-        last_date = self.releases[-1][1]
-        days_between = (last_date - first_date).days
+        # Releases are not guaranteed to be recorded in chronological order.
+        dates = sorted(date for _, date in self.releases)
+        days_between = (dates[-1] - dates[0]).days
         months = days_between / 30.0
         
         return len(self.releases) / months if months > 0 else 0.0
     
-    def get_release_report(self) -> Dict[str, any]:
+    def get_release_report(self) -> Dict[str, Any]:
         """Generate release report."""
         return {
             'total_releases': len(self.releases),
-            'latest_release': self.releases[-1] if self.releases else None,
+            'latest_release': max(self.releases, key=lambda r: r[1]) if self.releases else None,
             'frequency_per_month': self.get_release_frequency(),
             'release_history': self.releases
         }
@@ -117,7 +126,7 @@ class PackageMetrics:
             'timestamp': datetime.datetime.now()
         })
     
-    def get_package_stats(self) -> Dict[str, any]:
+    def get_package_stats(self) -> Dict[str, Any]:
         """Get package statistics."""
         if not self.packages:
             return {}

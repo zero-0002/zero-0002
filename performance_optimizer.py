@@ -5,7 +5,7 @@ Implements caching and efficient algorithms to improve execution speed.
 
 import functools
 import time
-from typing import Any, Callable, Dict, Optional
+from typing import Any, Callable, Dict
 
 
 class PerformanceMonitor:
@@ -41,6 +41,13 @@ class PerformanceMonitor:
         }
 
 
+# Global performance monitor, shared by every profiled function.
+_perf_monitor = PerformanceMonitor()
+
+# Upper bound on memoize caches so long-running processes cannot grow without limit.
+MEMOIZE_MAXSIZE = 128
+
+
 def memoize(func: Callable) -> Callable:
     """Decorator to cache function results."""
     cache: Dict[Any, Any] = {}
@@ -48,16 +55,23 @@ def memoize(func: Callable) -> Callable:
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         key = (args, tuple(sorted(kwargs.items())))
+        try:
+            hash(key)
+        except TypeError:
+            # Unhashable arguments cannot be cached; still return a correct result.
+            return func(*args, **kwargs)
         if key not in cache:
+            if len(cache) >= MEMOIZE_MAXSIZE:
+                cache.pop(next(iter(cache)))
             cache[key] = func(*args, **kwargs)
         return cache[key]
     
+    wrapper.cache = cache  # type: ignore
     return wrapper
 
 
 def profile_execution(func: Callable) -> Callable:
     """Decorator to profile function execution time."""
-    monitor = PerformanceMonitor()
     
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
@@ -67,9 +81,9 @@ def profile_execution(func: Callable) -> Callable:
             return result
         finally:
             duration = time.perf_counter() - start_time
-            monitor.record_execution(func.__name__, duration)
+            _perf_monitor.record_execution(func.__name__, duration)
     
-    wrapper.monitor = monitor  # type: ignore
+    wrapper.monitor = _perf_monitor  # type: ignore
     return wrapper
 
 
@@ -87,10 +101,6 @@ class OptimizedOperations:
         """Process items in batches for better performance."""
         for i in range(0, len(items), batch_size):
             yield items[i:i + batch_size]
-
-
-# Global performance monitor
-_perf_monitor = PerformanceMonitor()
 
 
 def get_performance_report() -> Dict[str, Any]:

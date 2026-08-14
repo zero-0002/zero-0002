@@ -36,7 +36,6 @@ class Response:
         delta = self.responded_at - self.created_at
         return delta.total_seconds() / 3600
     
-    @property
     def is_overdue(self, sla_hours: int = 24) -> bool:
         """Check if response is overdue based on SLA."""
         if self.responded_at:

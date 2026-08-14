@@ -9,10 +9,12 @@ This repository serves as the central hub for zero-0002's professional identity 
 ```
 zero-0002/
 ├── .github/
-│   └── workflows/          # GitHub Actions CI/CD pipelines
+│   └── workflows/          # GitHub Actions pipelines
 ├── assets/                 # Visual assets and SVG graphics
-├── docs/                   # Comprehensive documentation
 ├── tests/                  # Test suite for quality assurance
+├── drive_response_manager.py  # Engagement/response metrics
+├── pace_tracker.py            # Commit pace and release metrics
+├── performance_optimizer.py   # Caching and profiling helpers
 ├── CONTRIBUTING.md         # Contribution guidelines
 ├── ARCHITECTURE.md         # This file
 └── readme.md              # Main profile README
@@ -26,14 +28,13 @@ zero-0002/
 - Theme-specific media for light/dark modes
 
 #### Workflows (`.github/workflows/`)
-- **ci.yml**: Continuous integration pipeline
-  - Runs tests on every push and pull request
-  - Performs code linting and formatting checks
-  - Maintains code quality standards
-  - Uploads coverage reports
+- **pacman.yml**: Contribution-graph generation
+  - Runs on a daily schedule, on manual dispatch, and on pushes to `main`
+  - Generates the bomberman contribution graph SVGs
+  - Publishes the result to the `output` branch
 
 #### Documentation
-- **README.md**: Profile overview and quick links
+- **readme.md**: Profile overview and quick links
 - **CONTRIBUTING.md**: Guidelines for contributors
 - **ARCHITECTURE.md**: Technical design documentation
 
@@ -54,10 +55,9 @@ zero-0002/
 
 ### Quality Assurance
 
-- Linting: flake8 for Python code quality
-- Formatting: black for consistent code style
-- Testing: pytest for comprehensive test coverage
-- Coverage tracking: codecov integration
+- Testing: pytest suite under `tests/`, run locally with `python -m pytest tests/`
+- Repository structure and documentation are validated by `tests/test_repository.py`
+- Module behaviour is covered by `tests/test_modules.py`
 
 ## Development Guidelines
 
