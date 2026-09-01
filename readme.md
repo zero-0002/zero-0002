@@ -1,4 +1,4 @@
-<h1 align="center">AI/MLOps | Full stack | Automation </h1>
+<h1 align="center">AI/MLOps | Full stack | Mobile </h1>
 
 ###
 
